@@ -460,9 +460,9 @@ func (w *jsonWriter) marshalValue(fd protoreflect.FieldDescriptor, v protoreflec
 			switch kfd.Kind() {
 			case protoreflect.BoolKind:
 				return !entries[i].key.Bool() && entries[j].key.Bool()
-			case protoreflect.Int32Kind, protoreflect.Sint32Kind, protoreflect.Sfixed32Kind, protoreflect.Int64Kind, protoreflect.Sint64Kind, protoreflect.Sfixed64Kind:
+			case protoreflect.Int32Kind, protoreflect.Sint32Kind, protoreflect.Sfixed32Kind, protoreflect.Sint64Kind, protoreflect.Sfixed64Kind:
 				return entries[i].key.Int() < entries[j].key.Int()
-			case protoreflect.Uint32Kind, protoreflect.Fixed32Kind, protoreflect.Uint64Kind, protoreflect.Fixed64Kind:
+			case protoreflect.Uint32Kind, protoreflect.Fixed32Kind, protoreflect.Uint64Kind, protoreflect.Fixed64Kind, protoreflect.Int64Kind:
 				return entries[i].key.Uint() < entries[j].key.Uint()
 			case protoreflect.StringKind:
 				return entries[i].key.String() < entries[j].key.String()
